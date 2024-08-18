@@ -4,9 +4,7 @@ import { TodosRebanhosComponent } from "./todos-rebanhos/todos-rebanhos.componen
 @Component({
   selector: 'app-rebanhos',
   standalone: true,
-  imports: [
-    TodosRebanhosComponent
-  ],
+  imports: [TodosRebanhosComponent],
   templateUrl: './rebanhos.component.html',
   styleUrl: './rebanhos.component.css'
 })

@@ -1,8 +1,8 @@
 export interface Rebanho {
   id: number;
-  nomeRebanho: string;
   descriRebanho: string;
-  cliente: any;
+  nomeRebanho: string;
+  //cliente: any;
 
   /*   id: number;
     cliente: {

@@ -3,14 +3,19 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
 import { Rebanho } from '../../../core/models/rebanho';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { RebanhosService } from '../../../core/services/rebanhos.service';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-todos-rebanhos',
   standalone: true,
-  imports: [CommonModule, MatPaginatorModule, MatTableModule, MatSortModule],
+  imports: [
+    CommonModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule
+  ],
   templateUrl: './todos-rebanhos.component.html',
   styleUrl: './todos-rebanhos.component.css',
 })
@@ -58,11 +63,11 @@ export class TodosRebanhosComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  announceSortChange(sortState: Sort) {
+  /* announceSortChange(sortState: Sort){
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
     } else {
       this._liveAnnouncer.announce(`Sorting cleared`);
     }
-  }
+  } */
 }
