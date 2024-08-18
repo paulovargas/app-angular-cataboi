@@ -21,7 +21,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 })
 export class TodosRebanhosComponent implements AfterViewInit {
   displayedColumns: string[] = ['id', 'nomeRebanho', 'descriRebanho', 'opcoes'];
-  dataSource = new MatTableDataSource<Rebanho>();
+  data = new MatTableDataSource<Rebanho>();
   totalElements = 0;
   page = 0;
   pageSize = 10;
@@ -36,19 +36,19 @@ export class TodosRebanhosComponent implements AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.data.paginator = this.paginator;
+    this.data.sort = this.sort;
     this.getRebanhos(0, this.pageSize);
   }
 
   getRebanhos(pageIndex: number, pageSize: number): void {
     this.rebanhos.verTodosRebanhos(pageIndex, pageSize, this.sortBy).subscribe({
       next: (rebanhos) => (
-        (this.dataSource.data = rebanhos.content),
+        (this.data.data = rebanhos.content),
         (this.totalElements = rebanhos.totalElements),
         (this.paginator.pageIndex = pageIndex ? pageIndex : 0),
         console.log('rebanhos : ', rebanhos.content),
-        console.log('this.dataSource.data : ', this.dataSource.data),
+        console.log('this.data.data : ', this.data.data),
         console.log('rebanhos.totalElements : ', rebanhos.totalElements),
         console.log('pageIndex : ', pageIndex)
       ),
@@ -60,14 +60,14 @@ export class TodosRebanhosComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
+    this.data.sort = this.sort;
   }
 
-  /* announceSortChange(sortState: Sort){
+  announceSortChange(sortState: Sort){
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
     } else {
       this._liveAnnouncer.announce(`Sorting cleared`);
     }
-  } */
+  }
 }

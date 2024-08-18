@@ -29,7 +29,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 })
 export class TodosEventosComponent implements AfterViewInit {
   displayedColumns: string[] = ['idevenR', 'nomeRebanho', 'nome', 'local', 'dataEvento', 'descri', 'opcoes'];
-  dataSource = new MatTableDataSource<Evento>();
+  data = new MatTableDataSource<Evento>();
   totalElements = 0;
   page = 0;
   pageSize = 10;
@@ -44,15 +44,15 @@ export class TodosEventosComponent implements AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.data.paginator = this.paginator;
+    this.data.sort = this.sort;
     this.getEventos(0, this.pageSize);
   }
 
   getEventos(pageIndex: number, pageSize: number): void {
     this.eventos.verTodosEventos(pageIndex, pageSize, this.sortBy).subscribe({
       next: eventos => (
-        this.dataSource.data = eventos.content,
+        this.data.data = eventos.content,
         this.totalElements = eventos.totalElements,
         this.paginator.pageIndex = pageIndex,
         console.log("Eventos : ", eventos.content),
@@ -67,7 +67,7 @@ export class TodosEventosComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-      this.dataSource.sort = this.sort;
+      this.data.sort = this.sort;
   }
 
   announceSortChange(sortState: Sort){
