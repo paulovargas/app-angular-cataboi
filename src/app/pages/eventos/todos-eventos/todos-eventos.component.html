@@ -1,0 +1,70 @@
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" class="mx-5">
+  <!-- Código Column -->
+  <ng-container matColumnDef="idevenR">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by idevenR">
+      Código
+    </th>
+    <td mat-cell *matCellDef="let element"> {{ element.idevenR }} </td>
+  </ng-container>
+
+  <!-- Rebanho Column -->
+  <ng-container matColumnDef="nomeRebanho">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by nomeRebanho">
+      Rebanho
+    </th>
+    <td mat-cell *matCellDef="let element"> {{ element.rebanho.nomeRebanho }} </td>
+  </ng-container>
+
+  <!-- Evento Column -->
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by nome">
+      Evento
+    </th>
+    <td mat-cell *matCellDef="let element"> {{ element.nome }} </td>
+  </ng-container>
+  <!-- Local Column -->
+  <ng-container matColumnDef="local">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by local">
+      Local
+    </th>
+    <td mat-cell *matCellDef="let element"> {{ element.local }} </td>
+  </ng-container>
+
+  <!-- Data Column -->
+  <ng-container matColumnDef="dataEvento">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by dataEvento">
+      Data
+    </th>
+    <td mat-cell *matCellDef="let element"> {{ element.dataEvento }} </td>
+  </ng-container>
+
+  <!-- Descrição Column -->
+  <ng-container matColumnDef="descri">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by descri">
+      Descrição
+    </th>
+    <td mat-cell *matCellDef="let element"> {{ element.descri }} </td>
+  </ng-container>
+
+  <!-- Pelagem Column -->
+  <!-- <ng-container matColumnDef="pelagem">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by pelagem">
+      Pelagem
+    </th>
+    <td mat-cell *matCellDef="let element"> {{ element.pelagem ? element.pelagem : "" }} </td>
+  </ng-container> -->
+
+  <!-- Opções Column -->
+  <ng-container matColumnDef="opcoes">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Opções
+    </th>
+    <!-- Coloca botões -->
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [length]="totalElements" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]"
+  (page)="onPageChange($event)">
+</mat-paginator>

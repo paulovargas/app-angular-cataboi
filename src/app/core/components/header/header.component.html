@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Cataboi</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Animais
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Adicionar Animal</a></li>
+            <li><a class="dropdown-item" [routerLink]="[{ outlets: { main: ['todos-animais'] } }]">Ver Todos Animais</a></li>
+            <li><a class="dropdown-item" href="#">Buscar por Brinco</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Eventos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Adicionar Evento</a></li>
+            <li><a class="dropdown-item" href="#">Adicionar Evento Individual</a></li>
+            <li><a class="dropdown-item" [routerLink]="[{ outlets: { main: ['todos-eventos'] } }]">Ver Todos Eventos</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Rebanho
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Adicionar Rebanho</a></li>
+            <li><a class="dropdown-item" [routerLink]="[{ outlets: { main: ['todos-rebanhos'] } }]">Ver Todos Rebanhos</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Propriedades
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Adicionar Propriedade</a></li>
+            <li><a class="dropdown-item" [routerLink]="[{ outlets: { main: ['todas-propriedades'] } }]">Ver Todas Propriedades</a></li>
+          </ul>
+        </li>
+
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Brinco, propriedade, rebanho ..." aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
