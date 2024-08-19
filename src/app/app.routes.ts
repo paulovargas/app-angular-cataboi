@@ -5,6 +5,7 @@ import { AnimaisComponent } from './pages/animais/animais.component';
 import { PropriedadesComponent } from './pages/propriedades/propriedades.component';
 import { EventosComponent } from './pages/eventos/eventos.component';
 import { RebanhosComponent } from './pages/rebanhos/rebanhos.component';
+import { FormPropriedadesComponent } from './pages/propriedades/form-propriedades/form-propriedades.component';
 
 export const routes: Routes = [
   {
@@ -24,6 +25,11 @@ export const routes: Routes = [
           {
             path: 'todas-propriedades',
             component: PropriedadesComponent,
+            outlet: 'main'
+          },
+          {
+            path: 'form-propriedades',
+            component: FormPropriedadesComponent,
             outlet: 'main'
           },
           {

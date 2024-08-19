@@ -7,6 +7,7 @@ import { Propriedade } from '../../../core/models/propriedade';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { PropriedadesService } from '../../../core/services/propriedades.service';
 import {MatIconModule} from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 
 //const PROPRIEDADE_DATA: Propriedade[] = [];
 
@@ -18,7 +19,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatIconModule,
     MatPaginatorModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    RouterLink
   ],
   templateUrl: './todas-propriedades.component.html',
   styleUrl: './todas-propriedades.component.css'
@@ -44,6 +46,8 @@ export class TodasPropriedadesComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
     this.getPropriedades(0, this.pageSize);
   }
+
+  testeOp(): void {}
 
   getPropriedades(pageIndex: number, pageSize: number): void {
     this.propriedades.verTodasPropriedades(pageIndex, pageSize, this.sortBy).subscribe({

@@ -27,9 +27,13 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header>
       Opções
     </th>
-    <td mat-cell *matCellDef="let element"><!-- delete_forever -->
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit_note"></mat-icon>
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete_forever"></mat-icon>
+    <td mat-cell *matCellDef="let element">
+      <a [routerLink]="['(main:form-propriedades)']">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit_note"></mat-icon>
+      </a>
+      <a href="">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete_forever"></mat-icon>
+      </a>
     </td>
     <!-- Coloca botões -->
   </ng-container>
